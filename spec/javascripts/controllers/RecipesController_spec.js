@@ -20,6 +20,7 @@ describe("RecipesController", function() {
 			});
 		});
 	};
+	
 	beforeEach(module("AngRec"));
 	beforeEach(setupController());
   return it('defaults to no recipes', function() {
