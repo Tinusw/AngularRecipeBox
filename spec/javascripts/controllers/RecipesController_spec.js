@@ -20,10 +20,10 @@ describe("RecipesController", function() {
 			});
 		});
 	};
-	
-	beforeEach(module("AngRec"));
-	beforeEach(setupController());
+
+  beforeEach(module('angRec'));
+  beforeEach(setupController());
   return it('defaults to no recipes', function() {
-		expect(scope.recipes).toEqualData([]);
-	});
+    return expect(scope.recipes).toEqualData([]);
+  });
 });

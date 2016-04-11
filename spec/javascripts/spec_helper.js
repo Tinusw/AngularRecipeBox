@@ -2,24 +2,10 @@
 // require support/jasmine-jquery-1.7.0
 // require support/jasmine-jquery-2.0.0
 // require support/jasmine-jquery-2.1.0
-// require support/sinon
-// require support/your-support-file
 // require angular-mocks/angular-mocks
+// require support/sinon
 
-beforeEach(function() {
-	return jasmine.addMatchers({
-		toEqualData: function(util, customEqualityTesters) {
-			return {
-				compare: function(actual, expected) {
-					var result;
-					result = {};
-					result.pass = angular.equals(actual, expected);
-					return result;
-				}
-			};
-		}
-  });
-});
+// require support/your-support-file
 
 //
 // PhantomJS (Teaspoons default driver) doesn't have support for Function.prototype.bind, which has caused confusion.
@@ -47,3 +33,18 @@ beforeEach(function() {
 // the configuration and use this file as a manifest.
 //
 // For more information: http://github.com/modeset/teaspoon
+
+beforeEach(function() {
+	return jasmine.addMatchers({
+		toEqualData: function(util, customEqualityTesters) {
+			return {
+				compare: function(actual, expected) {
+					var result;
+					result = {};
+					result.pass = angular.equals(actual, expected);
+					return result;
+				}
+			};
+		}
+  });
+});
