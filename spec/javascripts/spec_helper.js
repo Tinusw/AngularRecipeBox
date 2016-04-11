@@ -5,6 +5,22 @@
 // require support/sinon
 // require support/your-support-file
 // require angular-mocks/angular-mocks
+
+beforeEach(function() {
+	return jasmine.addMatchers({
+		toEqualData: function(util, customEqualityTesters) {
+			return {
+				compare: function(actual, expected) {
+					var result;
+					result = {};
+					result.pass = angular.equals(actual, expected);
+					return result;
+				}
+			};
+		}
+  });
+});
+
 //
 // PhantomJS (Teaspoons default driver) doesn't have support for Function.prototype.bind, which has caused confusion.
 // Use this polyfill to avoid the confusion.
