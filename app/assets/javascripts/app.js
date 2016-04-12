@@ -37,7 +37,8 @@ controllers.controller("RecipesController", ['$scope', '$routeParams', '$locatio
 	  $scope.search = function(keywords){
 	  	return $location.path("/").search('keywords', keywords);
 	  };
-
+    
+    // using $resource to send http requests to rspec tests
 	  var Recipe;
 	  Recipe= $resource('/recipes/:recipeId', {
 	  	recipeId: "@id", format: 'json'
