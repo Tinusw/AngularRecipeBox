@@ -11,4 +11,3 @@ app.config(['$routeProvider', function($routeProvider){
 ]);
 
 controllers = angular.module('controllers', []);
-
