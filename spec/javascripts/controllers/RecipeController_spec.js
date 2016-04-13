@@ -16,7 +16,7 @@ describe("RecipeController", function() {
 		};
 
 	setupController = function(recipeExists) {
-		if (recipeExists == null) {
+		if (recipeExists === null) {
 			recipeExists - true;
 		}
 		return inject(function($location, $routeParams, $rootScope, $httpBackend, $controller) {
