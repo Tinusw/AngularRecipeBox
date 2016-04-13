@@ -1,4 +1,4 @@
-var app = angular.module('angRec',['templates', 'ngRoute','ngResource', 'controllers'
+var app = angular.module('angRec',['templates', 'ngRoute','ngResource', 'controllers', 'angular-flash.service', 'angular-flash.flash-alert-directive'
 	]);
 
 // Route Config
