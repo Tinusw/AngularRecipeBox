@@ -1,11 +1,11 @@
 describe("RecipesController", function() {
   var ctrl, httpBackend, location, resource, routeParams, scope, setupController;
 
-  scope = null;
-  ctrl = null;
-  location = null;
+  scope       = null;
+  ctrl        = null;
+  location    = null;
   routeParams = null;
-  resource = null;
+  resource    = null;
 
   // Access injected service
   httpBackend = null;
