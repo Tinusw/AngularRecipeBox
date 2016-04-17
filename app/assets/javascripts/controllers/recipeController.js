@@ -8,6 +8,7 @@ controllers.controller("RecipeController", ['$scope', '$routeParams', '$resource
     	recipeId: "@id", 
     	format: 'json'
     });
+
     return Recipe.get({
       recipeId: $routeParams.recipeId
     }, function(recipe) {
@@ -16,5 +17,5 @@ controllers.controller("RecipeController", ['$scope', '$routeParams', '$resource
       $scope.recipe = null;
       return flash.error = "There is no recipe with ID " + $routeParams.recipeId;
     });
-  }
+	}
 ]);
