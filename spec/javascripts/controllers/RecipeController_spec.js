@@ -1,5 +1,6 @@
 describe('RecipeController', function() {
   var ctrl, fakeRecipe, flash, httpBackend, location, recipeId, routeParams, scope, setupController;
+
   scope = null;
   ctrl = null;
   routeParams = null;
@@ -12,6 +13,7 @@ describe('RecipeController', function() {
     name: 'Baked Potatoes',
     instructions: 'Pierce potato with fork, nuke for 20 minutes'
   };
+
   setupController = function(recipeExists) {
     if (recipeExists == null) {
       recipeExists = true;
@@ -32,7 +34,9 @@ describe('RecipeController', function() {
       });
     });
   };
+
   beforeEach(module('angRec'));
+  
   afterEach(function() {
     httpBackend.verifyNoOutstandingExpectation();
     return httpBackend.verifyNoOutstandingRequest();
