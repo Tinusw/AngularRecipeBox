@@ -34,6 +34,14 @@ gem 'sass'
 gem 'bower-rails'
 gem 'bootstrap-sass'
 
+gem 'foreman'
+
+group :production, :staging do
+  gem 'rails_12factor'
+  gem 'rails_stdout_logging'
+  gem 'rails_serve_static_assets'
+end
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
