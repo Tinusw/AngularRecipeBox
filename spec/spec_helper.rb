@@ -27,7 +27,7 @@ RSpec.configure do |config|
     ActionMailer::Base.deliveries.clear
   end
 
-  config.around(:each, type: :feature, :js: true) do |ex|
+  config.around(:each, type: :feature, js: true) do |ex|
     DatabaseCleaner.strategy = :truncation
     DatabaseCleaner.start 
     self.use_transactional_fixtures = false
