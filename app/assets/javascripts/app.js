@@ -1,5 +1,5 @@
 // Ang Module
-var app = angular.module('angRec',['templates', 'ngRoute', 'controllers']);
+var app = angular.module('angRec',['templates', 'ngRoute', 'ngResource', 'controllers']);
 
 app.config([
   '$routeProvider', function($routeProvider) {
@@ -33,7 +33,7 @@ recipes = [
 
 controllers = angular.module('controllers', []);
 
-controllers.controller("RecipesController", ['$scope', '$routeParams','$location', function($scope, $routeParams, $location){
+controllers.controller("RecipesController", ['$scope', '$routeParams','$location', '$resource', function($scope, $routeParams, $location){
 	  var keywords;
 
 	  //Search Function
