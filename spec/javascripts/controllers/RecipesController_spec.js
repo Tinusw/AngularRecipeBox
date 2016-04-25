@@ -1,20 +1,19 @@
 describe("RecipesController", function() {
-	var ctrl, location, resource, routeParams, scope, setupController;
+  var ctrl, location, resource, routeParams, scope, setupController;
 
-	ctrl  = null;
-	location = null;
-	routeParams = null;
-	scope = null;
-	resource = null;
-	setupController = function(keywords) {
-		return inject(function($location, $routeParams, $rootScope, $resource, $controller){
-			scope = $rootScope.new();
+  scope = null;
+  ctrl = null;
+  location = null;
+  routeParams = null;
+  resource = null;
 
-			location = $location;
+	setupController= function(keywords) {
+		return inject( function($location, $routeParams, $rootScope, $resource, $controller) {
+			scope       = $rootScope.$new();
+			location    = $location;
+			resource    = $resource;
 			routeParams = $routeParams;
 			routeParams.keywords = keywords;
-			resource = $resource;
-
 			return ctrl = $controller('RecipesController', {
 				$scope: scope,
 				$location: location
@@ -22,10 +21,9 @@ describe("RecipesController", function() {
 		});
 	};
 
-	beforeEach(angular.mock.module("angRec"));
-
-	beforeEach(setupController());
-	return it('defaults to no recipes', function() {
-		return expect(scope.recipes).toEqualData([]);
-	});
+  beforeEach(module('angRec'));
+  beforeEach(setupController());
+  return it('defaults to no recipes', function() {
+    return expect(scope.recipes).toEqualData([]);
+  });
 });
