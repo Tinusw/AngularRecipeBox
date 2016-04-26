@@ -36,4 +36,44 @@ describe("RecipesController", function() {
   return it('defaults to no recipes', function() {
     return expect(scope.recipes).toEqualData([]);
   });
+
+  afterEach(function(){
+  	httpBackend.verifyNoOutstandingExpectatition();
+  	return httpBackend.verifyNoOutstandingRequest();
+  });
+
+  // Test 1 - controller initialization
+
+  describe('controller initialization', function() {
+  return describe('when no keywords present', function() {
+    beforeEach(setupController());
+    return it('defaults to no recipes', function() {
+      return expect(scope.recipes).toEqualData([]);
+	    });
+	  });
+	});
+
+	// Test 2 - Back-end test
+
+	describe('with keywords', function(){
+		keywords = 'foo';
+		recipes = [
+		{
+			id: 2,
+			name: 'Baked Potatoes'
+		},
+		{
+			id: 4,
+			name: 'Potatoes Au Gratin'
+		}
+		];
+
+		beforeEach(function(){
+			setupController(keywords, recipes);
+			httpBackend.flush();
+			return it('calls the back-end', function(){
+				return expect(scope.recipes.toEqualData(recipes));
+			});
+		});
+	});
 });
