@@ -56,6 +56,7 @@ describe("RecipesController", function() {
 	// Test 2 - Back-end test
 
 	describe('with keywords', function(){
+		var keywords, recipes;
 		keywords = 'foo';
 		recipes = [
 		{
@@ -70,10 +71,24 @@ describe("RecipesController", function() {
 
 		beforeEach(function(){
 			setupController(keywords, recipes);
-			httpBackend.flush();
-			return it('calls the back-end', function(){
-				return expect(scope.recipes.toEqualData(recipes));
-			});
+			return httpBackend.flush();
+		});
+		return it('calls the back-end', function(){
+			return expect(scope.recipes.toEqualData(recipes));
+		});
+	});
+
+	// Test 3 - Test Search returns URL correctly
+	describe('search()', function(){
+		beforeEach(function(){
+			return setupController();
+		});
+		return it('redirects to itself with a keyword param', function(){
+			var keywords;
+			keywords = 'foo';
+			scope.search(keywords);
+			expect(location.path()).toBe('/');
+			return expect(location.search()).toEqualData({keywords: keywords});
 		});
 	});
 });
