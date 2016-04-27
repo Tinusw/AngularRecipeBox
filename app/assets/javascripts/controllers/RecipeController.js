@@ -6,4 +6,13 @@ controllers.controller("RecipeController", ['$scope', '$routeParams', '$resource
 		recipeId: "@id",
 		format: 'json'
 	});
+  
+  // Making http calls out to tests
+	return Recipe.get({
+		recipeId: $routeParams.recipeId
+	}, (function(recipe) {
+		return $scope.recipe = recipe;
+	}), (function(httpResponse){
+		return $scope.recipe = null;
+	}));
 }]);
