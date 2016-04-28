@@ -62,7 +62,7 @@ describe RecipesController do
 		end
 
 		context "when the recipe doesn't exitst" do
-			let)(:recipe_id) { -9999 }
+			let (:recipe_id) { -9999 }
 			it { expect(response.status).to eq(404) }
 		end
 	end
