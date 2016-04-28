@@ -15,7 +15,7 @@ controllers.controller("RecipesController", ['$scope', '$routeParams','$location
 	  });
 
 	  if ($routeParams.keywords) {
-      return Recipe.query({
+      Recipe.query({
         keywords: $routeParams.keywords
       }, function(results) {
         return $scope.recipes = results;
@@ -23,5 +23,9 @@ controllers.controller("RecipesController", ['$scope', '$routeParams','$location
     } else {
       return $scope.recipes = [];
     }
+
+    return $scope.view = function(recipeId) {
+    	return $location.path("/recipes/" + recipeId);
+    };
   }
 ]);
