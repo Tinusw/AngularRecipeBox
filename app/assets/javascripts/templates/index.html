@@ -15,6 +15,9 @@
 			<button ng-click="search(keywords)" class="btn btn-primary btn-lg">
 				Search
 			</button>
+			<button ng-click="newRecipe()" class="btn btn-info btn-lg">
+				New Recipe...
+			</button>
 		</div>
 	</form>
 </section>
@@ -29,11 +32,8 @@
 					</a>
 				</h1>
 				<div class="col-md-6">
-					<button class="btn btn-info">
+					<button ng-click="edit(recipe.id)" class="btn btn-info">
 						Edit
-					</button>
-					<button class="btn btn-danger">
-						Delete
 					</button>
 				</div>
 			</section>

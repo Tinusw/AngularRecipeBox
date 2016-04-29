@@ -14,8 +14,14 @@ app.config([
     return $routeProvider.when('/', {
       templateUrl: "index.html",
       controller: 'RecipesController'
-    }).when('/recipes/:recipeId', {
+    }).when('/recipes/new', {
+      templateUrl: "form.html",
+      controller: 'RecipeController'
+    }).when('/recipes/:recipeId',{
       templateUrl: "show.html",
+      controller: 'RecipeController'
+    }).when('/recipes/:recipeId/edit', {
+      templateUrl: "form.html",
       controller: 'RecipeController'
     });
   }
