@@ -1,25 +1,21 @@
 <header class="row">
-	<h1 class="col-md6 text-center">
-		Find Recipes
-	</h1>
+  <h1 class="text-center col-md-6 col-md-offset-3">Find Recipes</h1>
 </header>
 <section class="row">
-	<form>
-		<div class="form-group col-md-6 col-md-offset-3">
-			<label for="keywords" class="sr-only">
-				Keywords
-			</label>
-			<input name="keywords" type="text" autofocus class="form-control" placeholder="Recipe Name" ng-model="keywords">
-		</div>
-		<div class="form-group col-md-6 col-md-offset-3 text-center">
-			<button ng-click="search(keywords)" class="btn btn-primary btn-lg">
-				Search
-			</button>
-			<button ng-click="newRecipe()" class="btn btn-info btn-lg">
-				New Recipe...
-			</button>
-		</div>
-	</form>
+  <form>
+    <div class="form-group col-md-6 col-md-offset-3">
+      <label for="keywords" class="sr-only">Keywords</label>
+      <input ng-model="keywords" name="keywords" type="text" autofocus class="form-control" placeholder="Recipe name, e.g. Baked Potato">
+    </div>
+    <div class="form-group col-md-6 col-md-offset-3 text-center">
+      <button ng-click="search(keywords)" class="btn btn-primary btn-lg">
+        <i aria-hidden="true" class="glyphicon glyphicon-search"></i>
+        Search</button>
+      <button ng-click="newRecipe()" class="btn btn-info btn-lg">
+        <i aria-hidden="true" class="glyphicon glyphicon-pencil"></i>
+        New Recipe…</button>
+    </div>
+  </form>
 </section>
 <hr>
 <section class="row" ng-if="recipes">
