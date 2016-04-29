@@ -24,8 +24,16 @@ controllers.controller("RecipesController", ['$scope', '$routeParams','$location
       return $scope.recipes = [];
     }
 
-    return $scope.view = function(recipeId) {
+    $scope.view = function(recipeId) {
     	return $location.path("/recipes/" + recipeId);
+    };
+
+    $scope.newRecipe = function() {
+      return $location.path("/recipes/new");
+    };
+
+    return $scope.edit = function(recipeId) {
+      return $location.path("/recipes/" + recipeId + "/edit");
     };
   }
 ]);
